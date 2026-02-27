@@ -10,28 +10,50 @@ The challenge is to make it meaningful.
 
 ---
 
-## Badge System
+## Record System
 
-| Badge | Trigger condition |
-|-------|-----------------|
+This platform does not use badges or points.  
+Contributions and belief updates are stored as a **quiet log** — visible to the user, not broadcast to others by default.
+
+The record exists because the act deserves to be remembered.  
+Not because it deserves to be displayed.
+
+### Record types
+
+| Record type | Trigger condition |
+|-------------|-----------------|
 | `Belief_Updated` | User explicitly marks that their position changed |
 | `Verification_Attempted` | User submits to Open Lab or links a verification attempt |
 | `Primary_Source_Added` | User adds a citable primary source with full metadata |
 | `Open_Lab_Posted` | User posts an experiment result to Open Lab |
 
+### Display format
+
+Records appear on the user's own profile page as plain text entries:
+
+> *"You updated your position on [topic] on [date]."*  
+> *"You added a primary source to [topic] on [date]."*  
+> *"You attempted to verify a claim on [date]. [link if available]"*
+
+No icons. No counters. No progress bars.  
+The record reads like a personal log, not a scoreboard.
+
+### Visibility
+
+- Default: visible to the user only
+- Optional: user may choose to make specific records public
+- No platform-wide leaderboard
+- No comparison between users
+
 ### Status hierarchy
 
-`Belief_Updated` is the highest-status badge.
+`Belief_Updated` is the most significant record type.
 
 This is a deliberate cultural design choice.  
-Long-term goal: *"I changed my mind"* becomes a social signal of intellectual credibility, not weakness.  
+Long-term goal: *"I changed my mind"* becomes a signal of intellectual credibility, not weakness.  
 This must be reinforced consistently across every interface element, every default state, and every piece of copy in the platform.
 
-### What badges do not reward
-- Being right the first time
-- Having the most citations
-- Identifying flaws in someone else's reasoning
-- Volume of contributions
+The record does not shout this. It simply notes it, quietly, for the person who did it.
 
 ---
 
@@ -78,10 +100,10 @@ Drawing from citizen science and open-source contribution literature:
 |-------|-----------|
 | Learning motivation | Research history timelines, paradigm shift cases, replication crisis data |
 | Contribution motivation | Correcting AI-generated errors, adding primary sources |
-| Social recognition | Badges visible in profile; `Belief_Updated` as highest status signal |
+| Recognition | Personal record log — quiet, private, persistent |
 | Epistemic relatedness | Researcher accounts of hypothesis falsification |
 
-These layers are not independent. Learning motivation creates the conditions for contribution motivation. Social recognition reinforces epistemic relatedness.
+These layers are not independent. Learning motivation creates the conditions for contribution motivation. Personal records reinforce epistemic relatedness without introducing competitive dynamics.
 
 ---
 
@@ -90,7 +112,7 @@ These layers are not independent. Learning motivation creates the conditions for
 Posting to Open Lab is the highest-cost action in the platform.  
 Motivation strategy:
 
-- `Open_Lab_Posted` badge (social recognition)
+- Record entry: `Open_Lab_Posted` added to personal log
 - Shared story format — not data dump, but narrative of attempt
 - Pre-filled context from Falsification Button reduces entry cost
 - Low-cost entry form: 5 fields maximum
@@ -105,8 +127,10 @@ Not all users. Designing for mass Open Lab participation will produce low-qualit
 
 ## What This System Does Not Do
 
+- Display counters, scores, points, or progress bars
+- Create leaderboards or user comparisons
 - Reward users for convincing others
 - Reward users for volume of posts
-- Create leaderboards ranked by certainty or citation count
 - Penalize users for holding positions that later turn out to be correct
-- Simulate scientific progress through point accumulation
+- Simulate scientific progress through accumulation mechanics
+- Broadcast a user's record without their explicit choice to share
